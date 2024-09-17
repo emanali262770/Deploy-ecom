@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const FooterMiddleSection = () => {
   return (
-    <div className="max-w-[1200px] mx-auto py-10 px-6">
+    <div className="max-w-[1300px] mx-auto py-10 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-6 gap-6">
         {/* Left Section - Brand Info */}
         <div className="col-span-2">

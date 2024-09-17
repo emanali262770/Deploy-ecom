@@ -3,7 +3,7 @@ import pay from '../../app/images/pay.png'
 import Image from 'next/image'
 const FooterBottomSection = () => {
   return (
-    <div className="bg-white max-w-[1200px] mx-auto  px-6 border-t border-gray-200">
+    <div className="bg-white max-w-[1300px] mx-auto  px-6 border-t border-gray-200">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Copyright Text */}
         <p className="text-gray-500 text-sm">
