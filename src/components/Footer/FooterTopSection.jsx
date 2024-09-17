@@ -10,7 +10,7 @@ const FooterTopSection = () => {
     <div className='bg-black'>
     <div className=" text-white max-w-[1300px]  mx-auto flex items-center justify-between mt-10 p-6 space-x-4">
       <div className="flex  items-center space-x-6">
-        <SlEnvolopeLetter color='green' size={330}/>
+        <SlEnvolopeLetter color='green' size={40}/>
         <div>
           <h2 className="text-lg font-semibold">Subscribe to our Newsletter</h2>
           <p className="text-sm text-gray-400">
