@@ -8,9 +8,9 @@ const Navbar = () => {
      
 
       {/* Fixed Navbar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+      <div className="fixed max-w- top-0 left-0 right-0 z-50 bg-white shadow-md">
         {/* Top bar */}
-        <div className="flex justify-between p-2 border-b-2 border-gray-200">
+        <div className="flex max-w-[1300px] mx-auto justify-between p-2 border-b-2 border-gray-200">
           <div className="flex items-center gap-2">
             <IoLocationOutline color="#6b7280" size={24} />
             <p className="text-gray-500 text-sm">Store Location: Lincoln-344, Illinois, Chicago, USA</p>

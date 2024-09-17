@@ -1,6 +1,6 @@
 // components/NavMiddleSection.jsx
 import React from 'react';
-import {  FaBars, FaPhoneAlt } from 'react-icons/fa';
+import { FaBars, FaPhoneAlt } from 'react-icons/fa';
 import { IoCartOutline } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
@@ -15,15 +15,15 @@ const NavMiddleSection = () => {
     <div>
       <header className="bg-white shadow-sm ">
         {/* Top Section */}
-        <div className="container mx-auto px-6 py-3 flex justify-between items-center">
+        <div className="container max-w-[1300px] mx-auto px-6 py-3 flex justify-between items-center">
           {/* Logo Section */}
-         <div>
-       
-        <Image src={ecobazaar} width={150} height={50}/>
+          <div>
 
-         </div>
+            <Image src={ecobazaar} width={150} height={50} />
 
-           {/* Search Bar */}
+          </div>
+
+          {/* Search Bar */}
           <div className="flex items-center w-1/2 bg-gray-100 rounded overflow-hidden">
             <input
               type="text"
@@ -34,22 +34,24 @@ const NavMiddleSection = () => {
           </div>
 
           {/* Contact Info */}
-           <div className="flex items-center space-x-2 text-gray-500 text-sm">
-            <FaPhoneAlt />
-            <span>Customer Services</span>
-            <span className="font-bold">(219) 555-0114</span>
-          </div> 
+          <div className="flex items-center space-x-1 text-gray-500 text-sm">
+            <FaPhoneAlt size={25}/> {/* Adjust icon size */}
+            <div className="flex flex-col">
+              <span className="text-xs">Customer Services</span> {/* Smaller text size */}
+              <span className="font-bold text-black text-lg">(219) 555-0114</span> {/* Bold and larger number */}
+            </div>
+          </div>
         </div>
 
         {/* Bottom Navigation */}
         <nav className="bg-black">
-          <div className="container mx-auto flex items-center px-6">
+          <div className="container max-w-[1300px] mx-auto flex items-center px-6">
             {/* All Categories Button */}
             <div className="bg-green-600 p-3">
               <FaBars color="white" size={24} />
             </div>
             <div className="bg-[#393e46] p-3">
-              <span className="text-white flex items-center">All Categories <RiArrowDropDownLine size={24}/></span>
+              <span className="text-white flex items-center">All Categories <RiArrowDropDownLine size={24} /></span>
             </div>
 
             {/* Navigation Links */}
@@ -98,13 +100,13 @@ const NavMiddleSection = () => {
                 </span>
               </a>
               <a href="#" className="text-white hover:text-gray-300">
-                <CiUser size={30}/>
+                <CiUser size={30} />
               </a>
             </div>
           </div>
         </nav>
       </header>
-     
+
     </div>
   );
 };

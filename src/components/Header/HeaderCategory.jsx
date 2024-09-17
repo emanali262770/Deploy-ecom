@@ -54,8 +54,8 @@ const items = [
     {
         key: 'all-categories',
         label: (
-            <a href="/all-categories" className="text-blue-500" rel="noopener noreferrer">
-                View all Category
+            <a href="/all-categories" className="text-blue-500 text-lg" rel="noopener noreferrer">
+               + View all Category
             </a>
         ),
     },
@@ -71,8 +71,8 @@ const HeaderCategory = () => {
     };
 
     return (
-        <div className="flex">
-            <div className='w-[16rem]  bg-gray-100  p-2'>
+        <div className="flex max-w-[1260px] gap-5 mx-auto">
+            <div className='w-[16rem]   bg-gray-100  p-2'>
                 <Menu
                     onClick={onClick}
                     selectedKeys={[current]}
