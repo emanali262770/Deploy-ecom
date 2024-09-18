@@ -27,7 +27,7 @@ const ShoppingBenefits = () => {
 
   return (
     // Benefit Section
-    <div className="flex  justify-between items-center mt-10 bg-gray-100 py-5 px-3 lg:px-20">
+    <div className="flex  justify-between items-center mt-10 w-[95vw] mx-auto bg-gray-100 py-5 px-3 lg:px-20">
     {benefits.map((benefit, index) => (
       <div key={index} className="flex items-center space-x-4 mx-4">
         <div className="bg-gray-100 rounded-full p-3 flex items-center justify-center">

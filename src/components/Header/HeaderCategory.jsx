@@ -71,7 +71,7 @@ const HeaderCategory = () => {
     };
 
     return (
-        <div className="flex max-w-[1260px] gap-5 mx-auto">
+        <div className="flex w-[95vw] gap-5 mx-auto">
             <div className='w-[16rem]   bg-gray-100  p-2'>
                 <Menu
                     onClick={onClick}

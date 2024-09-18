@@ -13,9 +13,9 @@ import Image from 'next/image';
 const NavMiddleSection = () => {
   return (
     <div>
-      <header className="bg-white shadow-sm ">
+      <header className="bg-white  ">
         {/* Top Section */}
-        <div className="container max-w-[1300px] mx-auto px-6 py-3 flex justify-between items-center">
+        <div className="container w-[95vw] mx-auto px-6 py-3 flex justify-between items-center">
           {/* Logo Section */}
           <div>
 
@@ -44,8 +44,8 @@ const NavMiddleSection = () => {
         </div>
 
         {/* Bottom Navigation */}
-        <nav className="bg-black">
-          <div className="container max-w-[1300px] mx-auto flex items-center px-6">
+        <nav className="">
+          <div className="container bg-black w-[95vw] mx-auto flex items-center px-6">
             {/* All Categories Button */}
             <div className="bg-green-600 p-3">
               <FaBars color="white" size={24} />

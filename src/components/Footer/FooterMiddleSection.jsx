@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const FooterMiddleSection = () => {
   return (
-    <div className="max-w-[1300px] mx-auto py-10 px-6">
+    <div className="w-[95vw] mx-auto py-10 ">
       <div className="max-w-7xl mx-auto grid grid-cols-6 gap-6">
         {/* Left Section - Brand Info */}
         <div className="col-span-2">
@@ -30,8 +30,8 @@ const FooterMiddleSection = () => {
 
         {/* Center Sections - Links */}
         <div className="space-y-2">
-          <h3 className="font-semibold text-gray-800">My Account</h3>
-          <ul className="text-gray-600 space-y-1">
+          <h3 className="font-semibold text-gray-800 mb-5">My Account</h3>
+          <ul className="text-gray-600 flex gap-4 flex-col space-y-1">
             <li>My Account</li>
             <li>Order History</li>
             <li>Shopping Cart</li>
@@ -40,8 +40,8 @@ const FooterMiddleSection = () => {
         </div>
 
         <div className="space-y-2">
-          <h3 className="font-semibold text-gray-800">Helps</h3>
-          <ul className="text-gray-600 space-y-1">
+          <h3 className="font-semibold text-gray-800 mb-5">Helps</h3>
+          <ul className="text-gray-600 flex gap-4 flex-col space-y-1">
             <li>Contact</li>
             <li>FAQs</li>
             <li>Terms & Condition</li>
@@ -50,8 +50,8 @@ const FooterMiddleSection = () => {
         </div>
 
         <div className="space-y-2">
-          <h3 className="font-semibold text-gray-800">Proxy</h3>
-          <ul className="text-gray-600 space-y-1">
+          <h3 className="font-semibold text-gray-800 mb-5">Proxy</h3>
+          <ul className="text-gray-600 flex gap-4 flex-col space-y-1">
             <li>About</li>
             <li>Shop</li>
             <li>Product</li>
