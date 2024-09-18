@@ -18,11 +18,11 @@ const FooterTopSection = () => {
           </p>
         </div>
       </div>
-      <div className="flex items-center bg-gray-800 rounded-l-full ">
+      <div className="flex items-center bg-gray-800 rounded-3xl ">
         <input
           type="email"
           placeholder="Your email address"
-          className="px-4 py-2 w-[300px] bg-gray-800 text-white rounded-l-full focus:outline-none"
+          className="px-4 py-2 w-[300px] bg-gray-800 text-white rounded-3xl focus:outline-none"
         />
         <button className="bg-green-500 px-6 py-2 rounded-3xl text-white font-semibold hover:bg-green-600">
           Subscribe

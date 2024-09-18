@@ -1,87 +1,89 @@
-'use client'
+'use client';
 import React, { useState } from 'react';
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import Link from 'next/link';
 import HeaderSlider from './HeaderSlider';
-// Define the items for the sidebar menu
+
 const items = [
     {
         label: <Link href="/fresh-fruit">Fresh Fruit</Link>,
         key: 'fresh-fruit',
-        icon: <MailOutlined />,
+        icon: <MailOutlined color='green'/>,
     },
     {
         label: <Link href="/vegetables">Vegetables</Link>,
         key: 'vegetables',
-        icon: <AppstoreOutlined />,
+        icon: <AppstoreOutlined color='green'/>,
     },
     {
         label: <Link href="/river-fish">River Fish</Link>,
         key: 'river-fish',
-        icon: <SettingOutlined />,
+        icon: <SettingOutlined color='green' />,
     },
     {
         label: <Link href="/chicken-meat">Chicken & Meat</Link>,
         key: 'chicken-meat',
-        icon: <MailOutlined />,
+        icon: <MailOutlined color='green' />,
     },
     {
         label: <Link href="/drink-water">Drink & Water</Link>,
         key: 'drink-water',
-        icon: <AppstoreOutlined />,
+        icon: <AppstoreOutlined color='green' />,
     },
     {
         label: <Link href="/yogurt-ice-cream">Yogurt & Ice Cream</Link>,
         key: 'yogurt-ice-cream',
-        icon: <SettingOutlined />,
+        icon: <SettingOutlined color='green' />,
     },
     {
         label: <a href="/cake-bread">Cake & Bread</a>,
         key: 'cake-bread',
-        icon: <MailOutlined />,
+        icon: <MailOutlined color='green' />,
     },
     {
         label: <Link href="/butter-cream">Butter & Cream</Link>,
         key: 'butter-cream',
-        icon: <AppstoreOutlined />,
+        icon: <AppstoreOutlined color='green' />,
     },
     {
         label: <Link href="/cooking">Cooking</Link>,
         key: 'cooking',
-        icon: <SettingOutlined />,
+        icon: <SettingOutlined color='green' />,
     },
     {
         key: 'all-categories',
         label: (
             <a href="/all-categories" className="text-blue-500 text-lg" rel="noopener noreferrer">
-               + View all Category
+                + View all Category
             </a>
         ),
     },
 ];
 
-// HeaderCategory component definition
 const HeaderCategory = () => {
-    const [current, setCurrent] = useState('fresh-fruit');
+    const [current, setCurrent] = useState('vegetables');
 
     const onClick = (e) => {
-        console.log('click ', e);
         setCurrent(e.key);
     };
 
     return (
         <div className="flex w-[95vw] gap-5 mx-auto">
-            <div className='w-[16rem]   bg-gray-100  p-2'>
+            <div className="w-[278px] border-[1px] border-gray-300 p-2">
                 <Menu
                     onClick={onClick}
                     selectedKeys={[current]}
                     mode="vertical"
                     items={items}
-                    className="custom-sidebar-menu  bg-gray-100"
+                    className="custom-sidebar-menu"
+                    style={{
+                        fontSize: '16px',
+                        fontWeight: '400',
+                    }}
                 />
             </div>
-            <HeaderSlider/>
+            <HeaderSlider />
         </div>
     );
 };

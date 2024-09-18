@@ -44,6 +44,7 @@ const HeaderSlider = () => {
           <Image
             src={salad}
             alt="Organic Food"
+            width={500}
             className="max-w-xs lg:max-w-sm object-contain rounded-lg"
             priority
           />
@@ -70,6 +71,7 @@ const HeaderSlider = () => {
           <Image
             src={salad}
             alt="Organic Food"
+            width={500}
             className="max-w-xs lg:max-w-sm object-contain rounded-lg"
             priority
           />

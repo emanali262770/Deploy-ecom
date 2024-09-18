@@ -15,7 +15,7 @@ const NavMiddleSection = () => {
     <div>
       <header className="bg-white  ">
         {/* Top Section */}
-        <div className="container w-[95vw] mx-auto px-6 py-3 flex justify-between items-center">
+        <div className="container w-[95vw] mx-auto px-2 py-3 flex justify-between items-center">
           {/* Logo Section */}
           <div>
 
@@ -34,7 +34,7 @@ const NavMiddleSection = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="flex items-center space-x-1 text-gray-500 text-sm">
+          <div className="flex gap-3 items-center space-x-1 text-gray-500 text-sm">
             <FaPhoneAlt size={25}/> {/* Adjust icon size */}
             <div className="flex flex-col">
               <span className="text-xs">Customer Services</span> {/* Smaller text size */}
