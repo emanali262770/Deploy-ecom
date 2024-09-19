@@ -8,9 +8,9 @@ const page = () => {
   return (
     <div>
       <Navbar/>
-     <HeaderCategory/>
-     <ShoppingBenefits/>
-     <Footer/>
+      <HeaderCategory/>
+      {/* {/* <ShoppingBenefits/> */}
+     <Footer/>  
     </div>
   )
 }

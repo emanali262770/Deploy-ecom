@@ -70,13 +70,13 @@ const HeaderCategory = () => {
 
     return (
         <div className="flex w-[95vw] gap-5 mx-auto">
-            <div className="w-[278px] border-[1px] border-gray-300 p-2">
+            <div className="w-[278px] hidden lg:flex border-[1px] border-gray-300 p-2">
                 <Menu
                     onClick={onClick}
                     selectedKeys={[current]}
                     mode="vertical"
                     items={items}
-                    className="custom-sidebar-menu"
+                    className="custom-sidebar-menu "
                     style={{
                         fontSize: '16px',
                         fontWeight: '400',

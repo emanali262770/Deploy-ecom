@@ -27,20 +27,19 @@ const ShoppingBenefits = () => {
 
   return (
     // Benefit Section
-    <div className="flex  justify-between items-center mt-10 w-[95vw] mx-auto bg-gray-100 py-5 px-3 lg:">
-    {benefits.map((benefit, index) => (
-      <div key={index} className="flex items-center space-x-4 mx-4">
-        <div className="bg-gray-100 rounded-full p-3 flex items-center justify-center">
-          {benefit.icon}
+    <div className="flex flex-col md:flex-row justify-between items-center mt-10 w-[95vw] mx-auto bg-gray-100 py-5 px-3">
+      {benefits.map((benefit, index) => (
+        <div key={index} className="flex items-center space-x-4 my-4 md:my-0">
+          <div className="bg-gray-100 rounded-full p-3 flex items-center justify-center">
+            {benefit.icon}
+          </div>
+          <div>
+            <h3 className="font-semibold text-base text-black">{benefit.title}</h3>
+            <p className="text-gray-500 text-sm">{benefit.description}</p>
+          </div>
         </div>
-        <div>
-          <h3 className="font-semibold text-base text-black">{benefit.title}</h3>
-          <p className="text-gray-500 text-sm">{benefit.description}</p>
-        </div>
-      </div>
-    ))}
-  </div>
-  
+      ))}
+    </div>
   );
 };
 
