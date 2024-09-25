@@ -1,112 +1,160 @@
 'use client'
 import Image from 'next/image';
-import React, { useState } from 'react';
 import capsi from '../images/capsi.jpg';
+import { MdOutlineCancel } from "react-icons/md";
 import red from '../images/red.jpg';
-import { GiCancel } from "react-icons/gi";
-
+import { useState } from 'react';
 
 const CartSection = () => {
-  
+  const [cartItems, setCartItems] = useState([
+    {
+      id: 1,
+      name: 'Green Capsicum',
+      price: 14.00,
+      quantity: 5,
+      image: capsi,
+    },
+    {
+      id: 2,
+      name: 'Red Capsicum',
+      price: 14.00,
+      quantity: 1,
+      image: red,
+    },
+  ]);
+
+  const updateQuantity = (id, newQuantity) => {
+    setCartItems(cartItems.map(item =>
+      item.id === id ? { ...item, quantity: Math.max(newQuantity, 1) } : item
+    ));
+  };
+
+  const removeItem = id => {
+    setCartItems(cartItems.filter(item => item.id !== id));
+  };
+
   return (
-    <div className="w-full flex flex-col lg:grid lg:grid-cols-3 gap-8 mx-auto p-4">
-      {/* Product Information Section */}
-      <div className="lg:col-span-2">
-        <div className="bg-white shadow-md p-4">
-          {/* Table Headers */}
-          <div className="list grid grid-cols-4 items-center w-[120%]  pb-2 text-sm md:text-base">
-            <p className="font-semibold text-sm md:text-lg">Product</p>
-            <p className="font-semibold text-sm md:text-lg">Price</p>
-            <p className="font-semibold text-sm md:text-lg">Quantity</p>
-            <p className="font-semibold text-sm md:text-lg">Subtotal</p>
+    <div className='flex flex-wrap md:flex-nowrap justify-center gap-3 px-4 py-8'>
+  {/* Cart Product Section */}
+  <div className="bg-white shadow-md rounded-lg p-6 w-full md:max-w-4xl">
+    {/* Table Headers (Hidden on Mobile) */}
+    <div className="hidden md:grid grid-cols-4 gap-4 text-left mb-4">
+      <p className="font-semibold">Product</p>
+      <p className="font-semibold">Price</p>
+      <p className="font-semibold">Quantity</p>
+      <p className="font-semibold">Subtotal</p>
+    </div>
+
+    {/* Cart Items */}
+    {cartItems.map(item => (
+      <div key={item.id} className="border-b pb-4 mb-4">
+        {/* Mobile View Layout */}
+        <div className="md:hidden space-y-2">
+          <div className="flex justify-between">
+            <p className="font-semibold">Product:</p>
+            <p>{item.name}</p>
           </div>
-
-          {/* Cart Items */}
-          <div className="max-w-full mx-auto border-t-2 bg-white p-6 shadow-lg rounded-lg">
-            {/* Cart Item 1 */}
-            <div className="flex flex-col sm:flex-row justify-between items-center border-b pb-4 mb-4">
-              <div className="flex items-center">
-                <Image src={capsi} alt="Green Capsicum" width={80} className=" object-cover rounded-lg" />
-
-                <div className="ml-4 flex flex-col sm:flex-row items-center gap-4 sm:gap-9">
-                  <h2 className="text-base font-semibold">Green Capsicum</h2>
-                  <p className="text-gray-500">$14.00</p>
-                </div>
-              </div>
-              <div className="flex items-center mt-4 sm:mt-0">
-                <button className="px-2 py-1 bg-gray-200 text-gray-600 rounded" >-</button>
-                <span className="mx-4">5</span>
-                <button className="px-2 py-1 bg-gray-200 text-gray-600 rounded" >+</button>
-              </div>
-              <div className="flex items-center gap-2 mt-4 sm:mt-0">
-                <p className="text-gray-800">$70.00</p>
-                <GiCancel />
-              </div>
+          <div className="flex justify-between">
+            <p className="font-semibold">Price:</p>
+            <p>${item.price.toFixed(2)}</p>
+          </div>
+          <div className="flex justify-between items-center">
+            <p className="font-semibold">Quantity:</p>
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                className="px-3 py-1 border rounded text-xl"
+              >
+                -
+              </button>
+              <span>{item.quantity}</span>
+              <button
+                onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                className="px-3 py-1 border rounded text-xl"
+              >
+                +
+              </button>
             </div>
+          </div>
+          <div className="flex justify-between">
+            <p className="font-semibold">Subtotal:</p>
+            <p>${(item.price * item.quantity).toFixed(2)}</p>
+          </div>
+        </div>
 
-            {/* Cart Item 2 */}
-            <div className="flex flex-col sm:flex-row justify-between items-center border-b pb-4 mb-4">
-              <div className="flex items-center">
-                <Image src={red} alt="Green Capsicum" width={80} className=" object-cover rounded-lg" />
-
-                <div className="ml-4 flex flex-col sm:flex-row items-center gap-4 sm:gap-9">
-                  <h2 className="text-lg font-semibold">Red Capsicum</h2>
-                  <p className="text-gray-500">$14.00</p>
-                </div>
-              </div>
-              <div className="flex items-center mt-4 sm:mt-0">
-                <button className="px-2 py-1 bg-gray-200 text-gray-600 rounded" >-</button>
-                <span className="mx-4">1</span>
-                <button className="px-2 py-1 bg-gray-200 text-gray-600 rounded" >+</button>
-              </div>
-              <div className="flex items-center gap-2 mt-4 sm:mt-0">
-                <p className="text-gray-800">$14.00</p>
-                <GiCancel />
-              </div>
-            </div>
-
-
-            {/* Coupon Code Section */}
-            <div className="flex flex-col md:flex-row items-center space-x-2 mt-8 mb-6">
-              <label className="text-lg py-3 md:py-0 font-semibold w-[150px] md:w-[200px]">Coupon Code</label>
-              <div className="flex flex-col md:flex-row justify-between w-full border border-gray-300 rounded-3xl overflow-hidden">
-                <input
-                  type="text"
-                  placeholder="Enter code"
-                  className="w-[200px] sm:w-[250px] md:w-[300px] lg:w-[400px] p-3 focus:outline-none"
-                />
-                <button className="bg-black  text-white rounded-3xl px-6 py-3 hover:bg-gray-800">
-                  Apply Coupon
-                </button>
-              </div>
-            </div>
+        {/* Desktop View Layout */}
+        <div className="hidden md:grid grid-cols-4 gap-4 items-center">
+          <div className="flex items-center space-x-4">
+            <Image src={item.image} alt={item.name} className="w-[55px] h-[40px] rounded-md" />
+            <p className="text-sm font-medium">{item.name}</p>
+          </div>
+          <p className="text-gray-500">${item.price.toFixed(2)}</p>
+          <div className="flex items-center space-x-2">
+            <button
+              onClick={() => updateQuantity(item.id, item.quantity - 1)}
+              className="px-3 py-1 border rounded text-xl"
+            >
+              -
+            </button>
+            <span>{item.quantity}</span>
+            <button
+              onClick={() => updateQuantity(item.id, item.quantity + 1)}
+              className="px-3 py-1 border rounded text-xl"
+            >
+              +
+            </button>
+          </div>
+          <div className='flex gap-5'>
+            <p className="text-lg font-medium">${(item.price * item.quantity).toFixed(2)}</p>
+            <MdOutlineCancel onClick={() => removeItem(item.id)} className="text-gray-400 hover:text-red-500 text-2xl" />
           </div>
         </div>
       </div>
+    ))}
 
-      {/* Cart Total Section */}
-      <div className="bg-white shadow-md p-6 h-fit mt-4 sm:mt-0">
-        <h2 className="text-lg sm:text-xl font-semibold mb-4">Cart Total</h2>
-        <div className="flex justify-between mb-2 text-sm sm:text-base">
-          <p>Subtotal:</p>
-          <p>$84.00</p>
-        </div>
-        <div className="flex justify-between mb-2 text-sm sm:text-base">
-          <p>Shipping:</p>
-          <p>Free</p>
-        </div>
-        <div className="flex justify-between mb-4 border-t pt-4 text-sm sm:text-base">
-          <p className="font-semibold">Total:</p>
-          <p className="font-semibold">$84.00</p>
-        </div>
-        <button className="bg-green-500 text-white w-full py-3 rounded-full text-sm sm:text-base">
-          Proceed to Checkout
-        </button>
+    {/* Bottom Buttons */}
+    <div className="flex flex-col sm:flex-row justify-between items-center pt-6 border-t mt-6 gap-2">
+      <button className="px-6 py-3 bg-gray-200 rounded-lg text-gray-700 hover:bg-gray-300 w-full sm:w-auto">
+        Return to shop
+      </button>
+      <button className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 w-full sm:w-auto">
+        Update Cart
+      </button>
+    </div>
+
+    {/* Coupon Section */}
+    <div className='flex flex-col sm:flex-row justify-between items-center mt-5 gap-2'>
+      <p className='font-semibold'>Coupon Code</p>
+      <div className='flex w-full sm:w-auto py-1 px-2 items-center rounded-3xl border-2 border-gray-300'>
+        <input type="text" placeholder='Enter Code' className='w-full sm:w-[250px] bg-transparent outline-none' />
+        <button className='bg-black text-white rounded-3xl py-2 px-3'>Apply Coupon</button>
       </div>
     </div>
+  </div>
+
+  {/* Cart Total Section */}
+  <div className="w-full md:w-1/4 flex flex-col justify-between bg-white shadow-md rounded-lg p-6 mt-8 md:mt-0">
+    <h2 className="text-lg font-semibold mb-4">Cart Total</h2>
+    <div className="flex justify-between items-center mb-2">
+      <p className="text-gray-600">Subtotal:</p>
+      <p className="font-medium">$84.00</p>
+    </div>
+    <div className="flex justify-between items-center mb-2">
+      <p className="text-gray-600">Shipping:</p>
+      <p className="font-medium">Free</p>
+    </div>
+    <div className="flex justify-between items-center border-t pt-2 mt-4">
+      <p className="text-lg font-semibold">Total:</p>
+      <p className="text-lg font-semibold">$84.00</p>
+    </div>
+    <button className="mt-6 w-full py-3 bg-green-500 text-white rounded-lg hover:bg-green-600">
+      Proceed to checkout
+    </button>
+  </div>
+</div>
 
 
   );
-}
+};
 
 export default CartSection;

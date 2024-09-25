@@ -27,3 +27,7 @@
 .custom-sidebar-menu .ant-menu-item-selected a {
     color: white !important; /* Change the text color when an item is selected */
 }
+#overflow::-webkit-scrollbar{
+visibility: none;
+display: none;
+}
