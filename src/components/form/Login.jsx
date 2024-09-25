@@ -88,7 +88,10 @@ const Login = ({ isOpen, setIsOpen }) => {
               Login with Mobile number
             </button>
 
-           
+           {/* Signup section */}
+           <div className="text-center text-sm">
+              Don't have an account? <Link href="/signup" className="text-green-600 hover:underline">Sign Up</Link>
+            </div>
           </div>
         )}
       </Popup>

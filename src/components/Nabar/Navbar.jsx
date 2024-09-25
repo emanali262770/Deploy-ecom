@@ -33,10 +33,10 @@ const Navbar = () => {
               <option className="text-gray-500 text-xs md:text-sm" value="">USD</option>
               <option className="text-gray-500 text-xs md:text-sm" value="">PKR</option>
             </select>
-            <div>
+            <div className='flex justify-between gap-3'>
               {/* Buttons to open login and signup popups */}
-              <button onClick={() => openPopup('login')}>Login</button>
-              <button onClick={() => openPopup('signup')}>Signup</button>
+              <button className='text-gray-500 text-xs md:text-sm' onClick={() => openPopup('login')}>Login</button>
+              <button className='text-gray-500 text-xs md:text-sm' onClick={() => openPopup('signup')}>Signup</button>
             </div>
           </div>
         </div>

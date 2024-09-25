@@ -17,7 +17,7 @@ const Signup = ({ isOpen, setIsOpen }) => {
       
       <Popup open={isOpen} modal onClose={() => setIsOpen(false)}>
         {close => (
-          <div className="relative w-full sm:w-[400px] bg-white rounded-lg shadow-lg mx-auto p-4 sm:p-8 max-w-md z-50">
+          <div className="relative w-[300px] md:w-[500px] bg-white rounded-lg shadow-lg mx-auto p-4 sm:p-8 z-50">
             {/* Close button */}
             <button className="absolute top-0 right-0 p-2 text-2xl text-gray-600 hover:text-gray-900" onClick={() => setIsOpen(false)}>
               &times;
@@ -79,6 +79,10 @@ const Signup = ({ isOpen, setIsOpen }) => {
               Register
             </button>
           
+           {/* Login link */}
+           <div className="text-center text-sm">
+              Already have an account? <Link href="/login" className="text-green-600 hover:underline">Login</Link>
+            </div>
           </div>
         )}
       </Popup>
